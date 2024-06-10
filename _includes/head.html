@@ -1,0 +1,18 @@
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    {% if site.indexing and page.layout != 404 %}
+    {% seo %}
+    {% else %}
+    <meta name="robots" content="none">
+    {% if page.title %}
+    <title>{{ site.title | prepend: ' | ' | prepend: page.title }}</title>
+    {% else %}
+    <title>{{ site.title | append: ' | ' | append: site.description }}</title>
+    {% endif %}
+    {% endif %}
+    <link rel="stylesheet" href="{{ '/assets/css/bootstrap.css' | prepend: site.url }}">
+    <link rel="stylesheet" href="{{ '/assets/css/leaflet.css' | prepend: site.url }}">
+    <link rel="stylesheet" href="{{ '/assets/css/open-color.css' | prepend: site.url }}">
+    <link rel="stylesheet" href="{{ '/assets/css/styles.css' | prepend: site.url }}">
+</head>
