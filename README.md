@@ -2,9 +2,9 @@
 
 This website uses the jekyll theme [jekyll-nagymaros](https://github.com/piazzai/jekyll-nagymaros).
 
-The website is built by using Github actions. The specific action is configured [here](.github/workflows/jekyll.yml)
+The website is built by using Github actions. The specific action is configured [here](.github/workflows/jekyll.yml). The action is only triggered form the `gh-pages` branch. 
 
-# Build locally
+## Build locally
 
 > Following the instructions provided [here](https://github.com/BretFisher/jekyll-serve).
 

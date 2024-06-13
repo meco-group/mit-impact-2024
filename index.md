@@ -5,6 +5,8 @@ description: Workshop on optimal control problems and model predictive control. 
 
 ### Overview
 
+Workshop on nonlinear optimal control and model predictive control using CasADi, Rockit and Impact.
+
 Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Sit amet luctus venenatis lectus magna fringilla urna. Ut etiam sit amet nisl purus in mollis.
 
 ### Registration

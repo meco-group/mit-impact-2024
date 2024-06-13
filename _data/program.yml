@@ -1,56 +1,58 @@
 legend:
   title: Legend
   categories:
-    - name: A category
+    - name: Theoretical
       color: blue-6
-    - name: Another category
+    - name: Practical
       color: red-6
-    - name: Yet another category
-      color: teal-6
+    - name: General
+      color: gray-6
 
 days:
   - name: Day 1
     events:
-      - time: 8:00 to 9:00
-        title: Registration and coffee
-      - time: 9:00 to 11:00
-        title: Lorem ipsum
+      - time: 10:00 to 10:15
+        title: Overview of the course
         subtitle: Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat
-        category: A category
-      - time: 11:00 to 13:00
-        title: Dolor sit amet
+        category: General
+      - time: 10:15 to 11:15
+        title: Introduction to nonlinear programming
         subtitle: Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum
-        category: A category
-      - time: 13:00 to 14:00
+        category: Theoretical
+      - time: 11:15 to 12:15
+        title: Tutorial on CasADi and its Opti stack
+        subtitle: Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum
+        category: Practical
+      - time: 12:15 to 13:15
         title: Lunch break
-      - time: 14:00 to 16:00
-        title: Consectetur adipiscing elit
+      - time: 13:15 to 14:15
+        title: Introduction to nonlinear optimal control
         subtitle: Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur
-        category: Another category
-      - time: 16:00 to 18:00
-        title: Sed do eiusmod
+        category: Theoretical
+      - time: 14:15 to 15:15
+        title: Tutorial on Rockit (Part 1)
         subtitle: Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua
-        category: Another category
+        category: Practical
   - name: Day 2
     events:
-      - time: 8:00 to 9:00
-        title: Coffee
-      - time: 9:00 to 11:00
-        title: Tempor incididunt
+      - time: 10:15 to 11:15
+        title: Tutorial on Rockit (Part 2)
         subtitle: Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum
-        category: A category
-      - time: 11:00 to 13:00
-        title: Ut labore et dolore
+        category: Practical
+      - time: 11:15 to 11:30
+        title: Introduction to nonlinear MPC
+        subtitle: Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum
+        category: Theoretical
+      - time: 11:30 to 12:15
+        title: Tutorial and interactive session on Impact (Part 1)
         subtitle: Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur
-        category: Another category
-      - time: 13:00 to 14:00
+        category: Practical
+      - time: 12:15 to 13:15
         title: Lunch break
-      - time: 14:00 to 16:00
-        title: Magna aliqua
-        subtitle: Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat
-        category: Yet another category
-      - time: 16:00 to 18:00
-        title: Poster presentations
-        category: Yet another category
-      - time: 18:00 to 19:00
+      - time: 13:15 to 15:00
+        title: Tutorial and interactive session on Impact (Part 2)
+        subtitle: Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur
+        category: Practical
+      - time: 15:00 to 15:10
         title: Closing
+        category: General
