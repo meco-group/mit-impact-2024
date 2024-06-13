@@ -1,3 +1,9 @@
+# Website information
+
+This website uses the jekyll theme [jekyll-nagymaros](https://github.com/piazzai/jekyll-nagymaros).
+
+The website is built by using Github actions. The specific action is configured [here](.github/workflows/jekyll.yml)
+
 # jekyll-nagymaros
 
 Nagymaros is a [Jekyll](https://jekyllrb.com) theme designed for conferences, workshops, meetings, and similar events. It has a simple and intuitive structure featuring four pages that provide key information about the event:
