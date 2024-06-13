@@ -1,11 +1,11 @@
 title: MECO MISTI Workshop 2024
-description: "Website for the workshop given by the MECO Research Team of KU Leuven, held at MIT in July 2024"
+description: ""
 baseurl: ""
 url: https://meco-group.github.io/mit-impact-2024/
 
 theme: jekyll-nagymaros
 
-copyright: Place Holder
+copyright: MECO Research Team
 indexing: true
 
 exclude:

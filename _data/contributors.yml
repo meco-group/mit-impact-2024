@@ -11,9 +11,12 @@ groups:
       - name: Louis
         surname: Callens
         email: louis.callens@kuleuven.be
-  - title: Local organizer
-    columns: false
-    members:
-      - name: Pygoscelis
-        surname: Papua
-        email: gentoo@pengu.in
+      - name: Alex
+        surname: Gonzalez García
+        email: alex.gonzalezgarcia@kuleuven.be
+  # - title: Local organizer
+  #   columns: false
+  #   members:
+  #     - name: Pygoscelis
+  #       surname: Papua
+  #       email: gentoo@pengu.in
