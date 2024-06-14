@@ -1,3 +1,8 @@
+content:
+  title: Program
+  description: Schedule of talks and activities
+  text: Tentative. In Eastern Daylight Time (GMT-4; Cambridge, MA Time).
+
 legend:
   title: Legend
   categories:
@@ -13,45 +18,45 @@ days:
     events:
       - time: 10:00 to 10:15
         title: Overview of the course
-        subtitle: Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat
+        # subtitle: Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat
         category: General
       - time: 10:15 to 11:15
         title: Introduction to nonlinear programming
-        subtitle: Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum
+        # subtitle: Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum
         category: Theoretical
       - time: 11:15 to 12:15
         title: Tutorial on CasADi and its Opti stack
-        subtitle: Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum
+        # subtitle: Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum
         category: Practical
       - time: 12:15 to 13:15
         title: Lunch break
       - time: 13:15 to 14:15
         title: Introduction to nonlinear optimal control
-        subtitle: Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur
+        # subtitle: Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur
         category: Theoretical
       - time: 14:15 to 15:15
         title: Tutorial on Rockit (Part 1)
-        subtitle: Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua
+        # subtitle: Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua
         category: Practical
   - name: Day 2
     events:
       - time: 10:15 to 11:15
         title: Tutorial on Rockit (Part 2)
-        subtitle: Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum
+        # subtitle: Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum
         category: Practical
       - time: 11:15 to 11:30
         title: Introduction to nonlinear MPC
-        subtitle: Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum
+        # subtitle: Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum
         category: Theoretical
       - time: 11:30 to 12:15
         title: Tutorial and interactive session on Impact (Part 1)
-        subtitle: Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur
+        # subtitle: Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur
         category: Practical
       - time: 12:15 to 13:15
         title: Lunch break
       - time: 13:15 to 15:00
         title: Tutorial and interactive session on Impact (Part 2)
-        subtitle: Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur
+        # subtitle: Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur
         category: Practical
       - time: 15:00 to 15:10
         title: Closing

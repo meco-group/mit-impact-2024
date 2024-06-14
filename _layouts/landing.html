@@ -1,0 +1,191 @@
+---
+layout: default
+---
+
+{% include metadata.liquid %}
+<!-- {% include header.html %} -->
+{% assign index_bg = site.data.skin.index.bg  | default: 'gray-1' %}
+
+<main class="my-4">
+    <div class="container px-5 py-3 bg-{{ index_bg }} rounded">
+        <h1 class="display-3">{{ title }}</h1>
+        <p class="lead">{{ description }}</p>
+        <hr class="my-4">
+        {{ content }}
+        {% if site.data.index.buttons %}
+        <div class="btn-group-lg mt-4 mb-3" role="group">
+            {% assign buttons = site.data.index.buttons %}
+            {% for button in buttons %}
+            {% assign classes = 'btn btn-primary d-block d-lg-inline-block my-lg-0' %}
+            {% unless forloop.first or forloop.last %}
+            {% assign classes = classes | append: ' my-2 mx-lg-2' %}
+            {% endunless %}
+            {% if button.disabled %}
+            {% assign classes = classes | append: ' disabled' %}
+            {% assign a = '' %}
+            {% else %}
+            {% assign a = 'href="' | append: button.url | append: '"' %}
+            {% endif %}
+            <a {{ a }} type="button" class="{{ classes }}" target="_blank">{{ button.text | upcase }}</a>
+            {% endfor %}
+        </div>
+        {% endif %}
+        <!-- 
+            Program 
+        -->
+        <hr class="my-5">
+        {% if site.data.program %}
+        <h1 class="display-6">{{site.data.program.content.title}}</h1>
+        {{site.data.program.content.text}}
+        <!-- <hr class="my-4"> -->
+        <p></p>
+        <div class="row" style="margin-top:4ex;">
+            {% assign size = site.data.program.days.size %}
+            {% if size > 1 %}
+            <div class="col-lg-2">
+                {% assign directions = 'horizontal, vertical' | split: ', ' %}
+                {% for direction in directions %}
+                {% if direction == 'horizontal' %}
+                {% assign classes = 'd-block d-lg-none text-center mb-3' %}
+                {% assign control = 'btn-group' %}
+                {% else %}
+                {% assign classes = 'd-none d-lg-block' %}
+                {% assign control = 'btn-group-vertical' %}
+                {% endif %}
+                <div class="{{ classes }}">
+                    <div class="btn {{ control }} p-0 aos-init aos-animate" role="tablist" data-aos="fade-up">
+                        {% for day in site.data.program.days %}
+                        {% assign id = forloop.index | prepend: 'day-' %}
+                        {% assign classes = 'btn btn-secondary' %}
+                        {% if forloop.first %}
+                        {% assign classes = classes | append: ' active' %}
+                        {% endif %}
+                        <button type="button" class="{{ classes }}" data-bs-toggle="tab" data-bs-target="#{{ id }}" role="tab" aria-controls="{{ id }}" aria-selected="true">
+                            <span class="fs-5">{{ day.name }}</span>
+                        </button>
+                        {% endfor %}
+                    </div>
+                </div>
+                {% endfor %}
+            </div>
+            {% assign width = 10 %}
+            {% else %}
+            {% assign width = 12 %}
+            {% endif %}
+            <div class="col-lg-{{ width }}">
+                {% for day in site.data.program.days %}
+                {% assign id = forloop.index | prepend: 'day-' %}
+                {% assign classes = 'tab-pane fade' %}
+                {% if forloop.first %}
+                {% assign classes = classes | append: ' active show' %}
+                {% endif %}
+                <div class="tab-content aos-init aos-animate" data-aos="fade-up">
+                    <div class="{{ classes }}" id="{{ id }}" role="tabpanel" aria-labelledby="{{ id }}-tab">
+                        {% assign categories = site.data.program.legend.categories %}
+                        <ul class="list-unstyled lh-sm">
+                            {% for event in day.events %}
+                            {% if event.category %}
+                            {% assign category = categories | find: 'name', event.category %}
+                            {% assign color = category.color %}
+                            {% else %}
+                            {% assign color = 'gray-4' %}
+                            {% endif %}
+                            {% assign start = event.time | split: ' to ' | slice: 0 %}
+                            {% assign end = event.time | split: ' to ' | slice: 1 %}
+                            {% if forloop.last %}
+                            {% assign classes = color | append: ' mb-2' %}
+                            {% else %}
+                            {% assign classes = color | append: ' mb-4' %}
+                            {% endif %}
+                            <li class="d-flex flex-column flex-lg-row ms-2">
+                                <div class="row col-lg-2 me-lg-4 text-lg-end mb-2">
+                                    <small class="fw-light text-muted">{{ start }}–{{ end }}</small>
+                                </div>
+                                <div class="row col-lg-10 border-start border-3 border-{{ classes }}">
+                                    {% if event.category %}
+                                    <h5 class="fw-normal m-0 mb-2">{{ event.title }}</h5>
+                                    <p class="fw-light m-0">{{ event.subtitle }}</p>
+                                    {% else %}
+                                    <h5 class="fw-light text-muted m-0 mb-2">{{ event.title }}</h5>
+                                    <p class="fw-light text-muted m-0">{{ event.subtitle }}</p>
+                                    {% endif %}
+                                </div>
+                            </li>
+                            {% endfor %}
+                        </ul>
+                        <div class="text-center">
+                            {% assign legend = day.events | map: 'category' | compact | uniq %}
+                            {% assign size = legend | size %}
+                            {% if size > 0 %}
+                            {% if site.data.program.legend.title %}
+                            <h5 class="fw-normal">{{ site.data.program.legend.title }}</h5>
+                            {% endif %}
+                            {% for item in legend %}
+                            {% assign border = categories | where: 'name', item | map: 'color' | first %}
+                            {% assign bg = border | split: '-' | first | prepend: 'bg-' | append: '-1' %}
+                            {% assign classes = border | prepend: ' border-' | prepend: bg %}
+                            {% if border %}
+                            <small class="d-block d-lg-inline-block mt-2 me-lg-2 px-3 py-1 border-start border-3 {{ classes }}">{{ item | upcase }}</small>
+                            {% endif %}
+                            {% endfor %}
+                            {% endif %}
+                        </div>
+                    </div>
+                </div>
+                {% endfor %}
+            </div>
+        </div>
+        {% endif %}
+        <!-- 
+            Organizers
+        -->
+        <hr class="my-5">
+        {% if site.data.contributors %}
+        <h1 class="display-6">{{site.data.contributors.content.title}}</h1>
+        {{site.data.contributors.content.text}}
+        <p></p>
+        {% assign groups = site.data.contributors.groups %}
+        {% for group in groups %}
+        {% if group.title %}
+        <h5 class="fw-normal">{{ group.title }}</h5>
+        {% endif %}
+        {% if group.columns %}
+        {% assign div = ' id="roster"' %}
+        {% else %}
+        {% assign div = '' %}
+        {% endif %}
+        <div {{ div }}>
+            <ul class="list-unstyled">
+                {% assign members = group.members | sort_natural: 'surname' %}
+                {% for member in members %}
+                {% assign full = member.name | append: ' ' | append: member.surname %}
+                {% if member.url %}
+                <li class="fw-light"><a href="{{ member.url }}">{{ full }}</a></li>
+                {% else if member.email %}
+                <li class="fw-light"><a href="mailto:{{ member.email }}">{{ full }}</a></li>
+                {% else %}
+                <li class="fw-light">{{ full }}</li>
+                {% endif %}
+                {% if member.position %}
+                {{member.position}}
+                <p></p>
+                {% endif %}
+                {% endfor %}
+            </ul>
+        </div>
+        {% endfor %}
+        {% endif %}
+        <!-- 
+            Venue
+        -->
+        <hr class="my-5">
+        {% if site.data.locations %}
+        <h1 class="display-6">{{site.data.locations.content.title}}</h1>
+        {{site.data.locations.content.text}}
+        <p></p>
+        <div id="map" style="margin-top:4ex;"></div>
+        {% endif %}
+    </div>
+</main>
+
+{% include footer.html %}

@@ -1,19 +1,31 @@
+content:
+  title: Organizers
+  description: List of organizers and participants
+  text: "This workshop is organized by four members of the MECO Research Team of KU Leuven, Belgium:"
 groups:
-  - title: Scientific committee
+  - title: 
     columns: false
     members:
       - name: Alejandro
         surname: Astudillo
         email: alejandro.astudillovigoya@kuleuven.be
+        url: https://www.mech.kuleuven.be/en/pma/research/meco/people/00124760
+        position: Postdoctoral researcher
       - name: Wilm
         surname: Decré
         email: wilm.decre@kuleuven.be
+        url: https://www.mech.kuleuven.be/en/pma/research/meco/people/00052672
+        position: Research manager
       - name: Louis
         surname: Callens
         email: louis.callens@kuleuven.be
+        url: https://www.mech.kuleuven.be/en/pma/research/meco/people/00143705
+        position: Doctoral researcher
       - name: Alex
         surname: Gonzalez García
         email: alex.gonzalezgarcia@kuleuven.be
+        url: https://www.mech.kuleuven.be/en/pma/research/meco/people/00159546
+        position: Doctoral researcher
   # - title: Local organizer
   #   columns: false
   #   members:

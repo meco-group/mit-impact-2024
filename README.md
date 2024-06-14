@@ -25,9 +25,12 @@ Allow the Docker container to forward network ports to your computer by running:
 ```bash
 docker run --rm -it --privileged --net=host --ipc=host -v $(pwd):/site -it --entrypoint bash bretfisher/jekyll
 ```
-Then run your commands interactively:
+Then run the following command to install the dependencies:
 ```bash
 bundle install --retry 5 --jobs 20
+```
+and the following command to build your website and serve it to `localhost:4000`:
+```bash
 bundle exec jekyll serve
 ```
 Finally, use your browser to visit `localhost:4000`.
