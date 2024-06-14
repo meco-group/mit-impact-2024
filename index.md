@@ -12,9 +12,20 @@ This workshop is organized by members of the [MECO Research Team](https://www.me
 
 This workshop has received funding from the *MIT-Belgium - KU Leuven Seed Fund* within the framework of the *MIT International Science and Technology Initiatives (MISTI)* grant programme.
 
+***
+
 ### Registration
 
 Due to capacity constraints at the venue of the workshop, we kindly ask all participants to register their participation at this [registration link](https://forms.office.com/e/uEVeKAjS2k).
+
+***
+
+### Important dates
+
+- Registration deadline: July 3rd, 2024 (AOE)
+- Workshop dates: July 10th and 11th, 2024.
+
+***
 
 ### Organizers
 
@@ -32,10 +43,14 @@ Doctoral researcher
 [Alex Gonzalez García](https://www.mech.kuleuven.be/en/pma/research/meco/people/00159546)  
 Doctoral researcher
 
+***
+
 ### Contact
 
 You can reach the organizers for any questions by contacting them at:
 
     alejandro.astudillovigoya < at > kuleuven.be
+
+*** 
 
 ### Relevant repositories
