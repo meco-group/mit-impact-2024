@@ -185,6 +185,17 @@ layout: default
         <p></p>
         <div id="map" style="margin-top:4ex;"></div>
         {% endif %}
+        <!-- 
+            References
+         -->
+         <hr class="my-5">
+        {% if site.data.references %}
+        <h1 class="display-6">{{site.data.references.title}}</h1>
+        {% for reference in site.data.references.references %}
+            [{{reference.number}}] {{reference.text}}  
+            <p></p>
+        {% endfor %}
+        {% endif %}
     </div>
 </main>
 

@@ -1,0 +1,10 @@
+title: References
+references:
+  - number: 1
+    text: "J. Gillis, B. Vandewal, G. Pipeleers, J. Swevers. 'Effortless modeling of optimal control problems with Rockit.'  39th Benelux Meeting on Systems and Control 2020, Elspeet, The Netherlands. https://gitlab.kuleuven.be/meco-software/rockit"
+  - number: 2
+    text: "A. Florez, A. Astudillo, W. Decré, J. Swevers, and J. Gillis, 'IMPACT: A Toolchain for Nonlinear Model Predictive Control Specification, Prototyping, and Deployment', IFAC-PapersOnLine, vol. 56, no. 2, pp. 3164-3169, 2023. https://gitlab.kuleuven.be/meco-software/impact"
+  - number: 3
+    text: "A. Astudillo, A. Florez, W. Decré, and J. Swevers, 'Rapid Deployment of Model Predictive Control for Robotic Systems: From IMPACT to ROS 2 Through Code Generation', in Proceedings of the 2024 IEEE 18th International Conference on Advanced Motion Control (AMC), 2024."
+  - number: 4
+    text: "J. Andersson, J. Gillis, G. Horn, J. Rawlings, and M. Diehl, 'CasADi: a software framework for nonlinear optimization and optimal control', Mathematical Programming Computation, vol. 11, 2019."
