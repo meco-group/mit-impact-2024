@@ -14,7 +14,7 @@ This workshop has received funding from the *MIT-Belgium - KU Leuven Seed Fund* 
 
 ### Registration
 
-Due to capacity constraints at the venue of the workshop, we kindly ask all participants to register their participation at this [registration link](https://www.mech.kuleuven.be/en/pma/research/mec).
+Due to capacity constraints at the venue of the workshop, we kindly ask all participants to register their participation at this [registration link](https://forms.office.com/e/uEVeKAjS2k).
 
 ### Organizers
 
