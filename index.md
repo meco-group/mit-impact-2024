@@ -8,12 +8,22 @@ description: Workshop on optimal control problems and model predictive control f
 
 In this workshop, participants will engage in hands-on exploration of optimal control problems (OCPs) applied to motion planning and model predictive control (MPC) in autonomous robotic systems. By engaging with cutting-edge tools and techniques, participants will develop the skills necessary to navigate complex environments, optimize trajectory paths, and execute tasks with precision and efficiency in robotic systems. 
 
-To streamline the guided exercises, the course makes use of the free and open-source [Rockit](https://gitlab.kuleuven.be/meco-software/rockit) [1] and [Impact](https://gitlab.kuleuven.be/meco-software/impact) [2][3] software frameworks developed by the [MECO Research Team](https://www.mech.kuleuven.be/en/pma/research/meco) at KU Leuven and built on top of the numerical optimization framework [CasADi](https://github.com/casadi/casadi) [4], designed for efficient nonlinear programming. Exercises will be in an online Python notebook. Attendees can later adopt the presented open-source software frameworks in their research. 
+To streamline the guided exercises, the workshop makes use of the free and open-source [Rockit](https://gitlab.kuleuven.be/meco-software/rockit) [1] and [Impact](https://gitlab.kuleuven.be/meco-software/impact) [2][3] software frameworks developed by the [MECO Research Team](https://www.mech.kuleuven.be/en/pma/research/meco) at KU Leuven and built on top of the numerical optimization framework [CasADi](https://github.com/casadi/casadi) [4], designed for efficient nonlinear programming. Exercises will be mainly in Python, and Docker images containing a development and simulation environment will be provided. Attendees can later adopt the presented open-source software frameworks in their research.
 
 While foundational concepts of OCPs will be introduced, the course focuses on learning-by-doing. The course prioritizes practical know-how, enabling participants to directly apply Rockit and Impact to tackle real-world robotic challenges. The attendees will learn to formulate and solve OCPs, gaining valuable experience in implementing trajectory optimization algorithms and MPC strategies. 
 
 
 This workshop is organized by members of the [MECO Research Team](https://www.mech.kuleuven.be/en/pma/research/meco) of KU Leuven, Belgium. The MECO Research Team focusses on modeling, estimation, identification, analysis and optimal control of motion and motion systems such as mechatronic systems or machine tools. It combines theoretical contributions (development of design methodologies) with experimental knowhow (implementation and experimental validation on lab-scale as well as industrial setups). The theoretical research benefits from the group's expertise on numerical optimization, especially convex optimization. 
+
+The following videos show previous works developed by the MECO Research Team using the software tools that will be used in this workshop:
+
+
+<iframe width="378" height="283" src="http://www.youtube.com/embed/SBNwXVDfLDg" frameborder="10" allowfullscreen></iframe>
+
+<iframe width="378" height="283" src="http://www.youtube.com/embed/bEeHD49rx20" frameborder="10" allowfullscreen></iframe>
+
+<iframe width="378" height="283" src="http://www.youtube.com/embed/iULN3skmdjs" frameborder="10" allowfullscreen></iframe>
+
 
 This workshop has received funding from the *MIT-Belgium - KU Leuven Seed Fund* within the framework of the *MIT International Science and Technology Initiatives (MISTI)* grant programme.
 
@@ -23,18 +33,21 @@ This workshop has received funding from the *MIT-Belgium - KU Leuven Seed Fund* 
 
 Due to capacity constraints at the venue of the workshop, we kindly ask all participants to register their participation at this [registration link](https://forms.office.com/e/uEVeKAjS2k).
 
+**Your registration will be completed only after you receive a confirmation email from the organizers.**
+
 ***
 
 ### Important dates
 
-- Registration deadline: July 3rd, 2024 (AOE)
+- Registration deadline: July 5th, 2024 (AOE)
 - Workshop dates: July 10th and 11th, 2024.
 
 ***
 
 ### Organizers
 
-This workshop is organized by four members of the MECO Research Team of KU Leuven, Belgium: 
+This workshop is organized by four members of the MECO Research Team of KU Leuven, 
+Belgium: 
 
 [Alejandro Astudillo](https://www.mech.kuleuven.be/en/pma/research/meco/people/00124760)  
 Postdoctoral researcher

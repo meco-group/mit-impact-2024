@@ -1,4 +1,4 @@
-title: MECO MISTI Workshop 2024
+title: OCP/MPC Workshop 2024
 description: ""
 baseurl: ""
 url: https://meco-group.github.io/mit-impact-2024/
@@ -16,6 +16,7 @@ exclude:
 plugins:
   - jekyll-seo-tag
   - jekyll-sitemap
+  - jekyll-figure
 
 sass:
   sourcemap: never
