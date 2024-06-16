@@ -13,10 +13,10 @@ layout: default
         <hr class="my-4">
         {{ content }}
         {% if site.data.index.buttons %}
-        <div class="btn-group-lg mt-4 mb-3" role="group">
+        <div class="btn-group-md mt-4 mb-3" role="group">
             {% assign buttons = site.data.index.buttons %}
             {% for button in buttons %}
-            {% assign classes = 'btn btn-primary d-block d-lg-inline-block my-lg-0' %}
+            {% assign classes = 'btn btn-primary d-lg-inline-block my-lg-0' %}
             {% unless forloop.first or forloop.last %}
             {% assign classes = classes | append: ' my-2 mx-lg-2' %}
             {% endunless %}
@@ -26,18 +26,17 @@ layout: default
             {% else %}
             {% assign a = 'href="' | append: button.url | append: '"' %}
             {% endif %}
-            <a {{ a }} type="button" class="{{ classes }}" target="_blank">{{ button.text | upcase }}</a>
+            <a {{ a }} type="button" class="{{ classes }}" target="_blank">{{ button.text }}</a>
             {% endfor %}
         </div>
         {% endif %}
         <!-- 
             Program 
         -->
-        <hr class="my-5">
+        <hr class="my-4">
         {% if site.data.program %}
-        <h1 class="display-6">{{site.data.program.content.title}}</h1>
+        <h3 id="program">{{site.data.program.content.title}}</h1>
         {{site.data.program.content.text}}
-        <!-- <hr class="my-4"> -->
         <p></p>
         <div class="row" style="margin-top:4ex;">
             {% assign size = site.data.program.days.size %}
@@ -137,50 +136,11 @@ layout: default
         </div>
         {% endif %}
         <!-- 
-            Organizers
-        -->
-        <!-- <hr class="my-5">
-        {% if site.data.contributors %}
-        <h1 class="display-6">{{site.data.contributors.content.title}}</h1>
-        {{site.data.contributors.content.text}}
-        <p></p>
-        {% assign groups = site.data.contributors.groups %}
-        {% for group in groups %}
-        {% if group.title %}
-        <h5 class="fw-normal">{{ group.title }}</h5>
-        {% endif %}
-        {% if group.columns %}
-        {% assign div = ' id="roster"' %}
-        {% else %}
-        {% assign div = '' %}
-        {% endif %}
-        <div {{ div }}>
-            <ul class="list-unstyled">
-                {% assign members = group.members | sort_natural: 'surname' %}
-                {% for member in members %}
-                {% assign full = member.name | append: ' ' | append: member.surname %}
-                {% if member.url %}
-                <li class="fw-light"><a href="{{ member.url }}">{{ full }}</a></li>
-                {% else if member.email %}
-                <li class="fw-light"><a href="mailto:{{ member.email }}">{{ full }}</a></li>
-                {% else %}
-                <li class="fw-light">{{ full }}</li>
-                {% endif %}
-                {% if member.position %}
-                {{member.position}}
-                <p></p>
-                {% endif %}
-                {% endfor %}
-            </ul>
-        </div>
-        {% endfor %}
-        {% endif %} -->
-        <!-- 
             Venue
         -->
-        <hr class="my-5">
+        <hr class="my-4">
         {% if site.data.locations %}
-        <h1 class="display-6">{{site.data.locations.content.title}}</h1>
+        <h3 id="venue">{{site.data.locations.content.title}}</h1>
         {{site.data.locations.content.text}}
         <p></p>
         <div id="map" style="margin-top:4ex;"></div>
@@ -188,9 +148,9 @@ layout: default
         <!-- 
             References
          -->
-         <hr class="my-5">
+        <hr class="my-4">
         {% if site.data.references %}
-        <h1 class="display-6">{{site.data.references.title}}</h1>
+        <h3 id="references">{{site.data.references.title}}</h1>
         {% for reference in site.data.references.references %}
             [{{reference.number}}] {{reference.text}}  
             <p></p>
@@ -200,3 +160,4 @@ layout: default
 </main>
 
 {% include footer.html %}
+{% include buttons.html %}

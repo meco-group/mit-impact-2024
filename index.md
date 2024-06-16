@@ -7,11 +7,25 @@ drone_racing_video_id: bEeHD49rx20
 bin_picking_video_id: iULN3skmdjs
 ---
 
+[Registration](#registration){: .btn .btn-primary .d-lg-inline-block}
+[Important dates](#important-dates){: .btn .btn-primary .d-lg-inline-block}
+[Organizers](#organizers){: .btn .btn-primary .d-lg-inline-block}
+[Contact](#contact){: .btn .btn-primary .d-lg-inline-block} 
+ 
+[Program](#program){: .btn .btn-primary .d-lg-inline-block}
+[Venue](#venue){: .btn .btn-primary .d-lg-inline-block}
+[Relevant repositories](#relevant-repositories){: .btn .btn-primary .d-lg-inline-block}
+
+
+***
+
 ### Overview
 
 In this workshop, participants will engage in hands-on exploration of optimal control problems (OCPs) applied to motion planning and model predictive control (MPC) in autonomous robotic systems. By engaging with cutting-edge tools and techniques, participants will develop the skills necessary to navigate complex environments, optimize trajectory paths, and execute tasks with precision and efficiency in robotic systems. 
 
-To streamline the guided exercises, the workshop makes use of the free and open-source [Rockit](https://gitlab.kuleuven.be/meco-software/rockit) [1] and [Impact](https://gitlab.kuleuven.be/meco-software/impact) [2][3] software frameworks developed by the [MECO Research Team](https://www.mech.kuleuven.be/en/pma/research/meco) at KU Leuven and built on top of the numerical optimization framework [CasADi](https://github.com/casadi/casadi) [4], designed for efficient nonlinear programming. Exercises will be mainly in Python, and Docker images containing a development and simulation environment will be provided. Attendees can later adopt the presented open-source software frameworks in their research.
+To streamline the guided exercises, the workshop makes use of the free and open-source [Rockit](https://gitlab.kuleuven.be/meco-software/rockit) [1] and [Impact](https://gitlab.kuleuven.be/meco-software/impact) [2][3] software frameworks developed by the [MECO Research Team](https://www.mech.kuleuven.be/en/pma/research/meco) at KU Leuven and built on top of the numerical optimization framework [CasADi](https://github.com/casadi/casadi) [4], designed for efficient nonlinear programming. 
+
+Exercises will be mainly in Python, and Docker images containing a development and simulation environment will be provided. Attendees can later adopt the presented open-source software frameworks in their research.
 
 While foundational concepts of OCPs will be introduced, the course focuses on learning-by-doing. The course prioritizes practical know-how, enabling participants to directly apply Rockit and Impact to tackle real-world robotic challenges. The attendees will learn to formulate and solve OCPs, gaining valuable experience in implementing trajectory optimization algorithms and MPC strategies. 
 
