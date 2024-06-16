@@ -7,15 +7,15 @@ drone_racing_video_id: bEeHD49rx20
 bin_picking_video_id: iULN3skmdjs
 ---
 
-[Registration](#registration){: .btn .btn-primary .d-lg-inline-block}
-[Important dates](#important-dates){: .btn .btn-primary .d-lg-inline-block}
-[Organizers](#organizers){: .btn .btn-primary .d-lg-inline-block}
-[Contact](#contact){: .btn .btn-primary .d-lg-inline-block} 
- 
-[Program](#program){: .btn .btn-primary .d-lg-inline-block}
-[Venue](#venue){: .btn .btn-primary .d-lg-inline-block}
-[Relevant repositories](#relevant-repositories){: .btn .btn-primary .d-lg-inline-block}
 
+[Registration](#registration){: .btn .btn-primary .d-lg-inline-block my-lg-0 .mt-1}
+[Important dates](#important-dates){: .btn .btn-primary .d-lg-inline-block my-lg-0 my-2 mx-lg-2 .mt-1}
+[Organizers](#organizers){: .btn .btn-primary .d-lg-inline-block my-lg-0 my-2 mx-lg-2 .mt-1}
+[Contact](#contact){: .btn .btn-primary .d-lg-inline-block my-lg-0 .mt-1} 
+ 
+[Program](#program){: .btn .btn-primary .d-lg-inline-block my-lg-0 .mt-1}
+[Venue](#venue){: .btn .btn-primary .d-lg-inline-block my-lg-0 my-2 mx-lg-2 .mt-1}
+[Relevant repositories](#relevant-repositories){: .btn .btn-primary .d-lg-inline-block my-lg-0 .mt-1}
 
 ***
 
