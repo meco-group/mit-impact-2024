@@ -2,6 +2,9 @@
 # layout: index
 layout: landing
 description: Workshop on optimal control problems and model predictive control for autonomous systems. July 10th - 11th @ Cambridge, MA
+truck_trailer_video_id: SBNwXVDfLDg
+drone_racing_video_id: bEeHD49rx20
+bin_picking_video_id: iULN3skmdjs
 ---
 
 ### Overview
@@ -17,12 +20,11 @@ This workshop is organized by members of the [MECO Research Team](https://www.me
 
 The following videos show previous works developed by the MECO Research Team using the software tools that will be used in this workshop:
 
+{% include youtubePlayer.html id=page.truck_trailer_video_id %}
 
-<iframe width="378" height="283" src="http://www.youtube.com/embed/SBNwXVDfLDg" frameborder="10" allowfullscreen></iframe>
+{% include youtubePlayer.html id=page.drone_racing_video_id %}
 
-<iframe width="378" height="283" src="http://www.youtube.com/embed/bEeHD49rx20" frameborder="10" allowfullscreen></iframe>
-
-<iframe width="378" height="283" src="http://www.youtube.com/embed/iULN3skmdjs" frameborder="10" allowfullscreen></iframe>
+{% include youtubePlayer.html id=page.bin_picking_video_id %}
 
 
 This workshop has received funding from the *MIT-Belgium - KU Leuven Seed Fund* within the framework of the *MIT International Science and Technology Initiatives (MISTI)* grant programme.
