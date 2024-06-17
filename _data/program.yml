@@ -40,6 +40,10 @@ days:
         category: Practical
   - name: Day 2
     events:
+      - time: 10:00 to 10:15
+        title: Introduction to second day
+        subtitle: Short introduction to the content of the second day of the workshop
+        category: General
       - time: 10:15 to 11:15
         title: Tutorial on Rockit (Part 2)
         subtitle: How to easily specify and prototype optimal control problems

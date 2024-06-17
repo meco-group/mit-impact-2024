@@ -78,7 +78,11 @@ This workshop has received funding from the *MIT-Belgium - KU Leuven Seed Fund* 
 
 ### Registration
 
-Due to capacity constraints at the venue of the workshop, we kindly ask all participants to register their participation. Use the following button to register:
+Due to capacity constraints at the venue of the workshop, we kindly ask all participants to register their participation. 
+
+**Registration is free**, but **limited to students/researchers/professors associated to MIT**.
+
+Use the following button to register:
 
 
 <a href="https://forms.office.com/e/uEVeKAjS2k" type="button" class="btn btn-primary d-lg-inline-block my-lg-0" target="_blank">Click here to register for the workshop</a>
