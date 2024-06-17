@@ -22,7 +22,7 @@ days:
         category: General
       - time: 10:15 to 11:15
         title: Introduction to nonlinear programming
-        subtitle: Preliminary concepts on specifying and solving nonlinear programs
+        subtitle: Preliminary concepts on specifying and solving nonlinear programming problems
         category: Theoretical
       - time: 11:15 to 12:15
         title: Tutorial on CasADi and its Opti stack
@@ -32,7 +32,7 @@ days:
         title: Lunch break
       - time: 13:15 to 14:15
         title: Introduction to nonlinear optimal control
-        subtitle: How to formulate optimal control problems using different shooting methods and integrators
+        subtitle: How to formulate optimal control problems using different transcription methods and integrators
         category: Theoretical
       - time: 14:15 to 15:15
         title: Tutorial on Rockit (Part 1)
