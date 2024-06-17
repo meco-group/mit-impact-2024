@@ -60,7 +60,7 @@ This workshop has received funding from the *MIT-Belgium - KU Leuven Seed Fund* 
 Due to capacity constraints at the venue of the workshop, we kindly ask all participants to register their participation. Use the following button to register:
 
 
-<a href="https://forms.office.com/e/uEVeKAjS2k" type="button" class="btn btn-primary d-lg-inline-block my-lg-0" target="_blank">Click here to register to the workshop</a>
+<a href="https://forms.office.com/e/uEVeKAjS2k" type="button" class="btn btn-primary d-lg-inline-block my-lg-0" target="_blank">Click here to register for the workshop</a>
 
 **Your registration will be completed only after you receive a confirmation email from the organizers.**
 
@@ -68,8 +68,8 @@ Due to capacity constraints at the venue of the workshop, we kindly ask all part
 
 ### Important dates
 
-- Registration deadline: July 5th, 2024 (AOE)
-- Workshop dates: July 10th and 11th, 2024.
+- Registration deadline: July 12th, 2024 (AoE)
+- Workshop dates: July 16th and 17th, 2024.
 
 ***
 
