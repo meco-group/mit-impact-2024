@@ -1,7 +1,7 @@
 ---
 # layout: index
 layout: landing
-description: Workshop on optimal control problems and model predictive control for autonomous systems. July 10th - 11th @ Cambridge, MA
+description: Workshop on optimal control problems and model predictive control for autonomous systems
 truck_trailer_video_id: SBNwXVDfLDg
 drone_racing_video_id: bEeHD49rx20
 bin_picking_video_id: iULN3skmdjs

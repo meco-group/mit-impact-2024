@@ -10,6 +10,7 @@ layout: default
     <div class="container px-5 py-3 bg-{{ index_bg }} rounded">
         <h1 class="display-3">{{ title }}</h1>
         <p class="lead">{{ description }}</p>
+        <p class="lead">{{site.data.index.dates}} @ {{site.data.index.place}}</p>
         <hr class="my-4">
         {{ content }}
         {% if site.data.index.buttons %}
