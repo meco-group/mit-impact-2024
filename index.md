@@ -53,6 +53,27 @@ The following videos show previous works developed by the MECO Research Team usi
 
 This workshop has received funding from the *MIT-Belgium - KU Leuven Seed Fund* within the framework of the *MIT International Science and Technology Initiatives (MISTI)* grant programme.
 
+<div class="container">
+  <div class="row">
+    <div class="col-sm">
+        <figure>
+            <img src="assets/images/MISTI_logo.png" height="75px" alt="" />
+        </figure>
+    </div>
+    <div class="col-sm">
+        <figure>
+            <img src="assets/images/KULeuven_logo.png" height="75px" alt="" />
+        </figure>
+    </div>
+    <div class="col-sm">
+        <figure>
+            <img src="assets/images/MIT_logo.png" height="75px" alt="" />
+        </figure>
+    </div>
+  </div>
+</div>
+
+
 ***
 
 ### Registration
