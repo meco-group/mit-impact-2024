@@ -80,7 +80,7 @@ This workshop has received funding from the *MIT-Belgium - KU Leuven Seed Fund* 
 
 Due to capacity constraints at the venue of the workshop, we kindly ask all participants to register their participation. 
 
-**Participation at the workshop is free of charge, but registration is compulsory**, and **limited to students/researchers/professors associated to MIT**. Please contact the organizers in case you have any questions.
+**Participation at the workshop is free of charge, but registration is compulsory**, and **limited to students/researchers/professors associated to MIT**. Please contact the organizers in case you have any question.
 
 Use the following button to register:
 
