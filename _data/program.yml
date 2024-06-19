@@ -26,7 +26,7 @@ days:
         category: Theoretical
       - time: 11:15 to 12:15
         title: Tutorial on CasADi and its Opti stack
-        subtitle: How to define expressions, functions and nonlinear programs with the numerical optimization framework CasADi
+        subtitle: How to efficiently define expressions, functions and nonlinear programs with the numerical optimization framework CasADi
         category: Practical
       - time: 12:15 to 13:15
         title: Lunch break
@@ -36,7 +36,7 @@ days:
         category: Theoretical
       - time: 14:15 to 15:15
         title: Tutorial on Rockit (Part 1)
-        subtitle: How to easily specify and prototype optimal control problems
+        subtitle: How to easily specify and prototype optimal control problems using different solvers
         category: Practical
   - name: Day 2
     events:
@@ -46,7 +46,7 @@ days:
         category: General
       - time: 10:15 to 11:15
         title: Tutorial on Rockit (Part 2)
-        subtitle: How to easily specify and prototype optimal control problems
+        subtitle: How to easily specify and prototype optimal control problems using different solvers
         category: Practical
       - time: 11:15 to 11:30
         title: Introduction to nonlinear MPC
@@ -54,13 +54,13 @@ days:
         category: Theoretical
       - time: 11:30 to 12:15
         title: Tutorial and interactive session on Impact (Part 1)
-        subtitle: How to easily specify, prototype and deploy MPC for robotic systems
+        subtitle: How to easily specify, prototype and deploy MPC for robotic systems in C, Python, and ROS 2
         category: Practical
       - time: 12:15 to 13:15
         title: Lunch break
       - time: 13:15 to 15:00
         title: Tutorial and interactive session on Impact (Part 2)
-        subtitle: How to easily specify, prototype and deploy MPC for robotic systems
+        subtitle: How to easily specify, prototype and deploy MPC for robotic systems in C, Python, and ROS 2
         category: Practical
       - time: 15:00 to 15:10
         title: Closing
