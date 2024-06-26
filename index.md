@@ -82,6 +82,8 @@ Due to capacity constraints at the venue of the workshop, we kindly ask all part
 
 **Participation at the workshop is free of charge, but registration is compulsory**, and **limited to students/researchers/professors associated to MIT**. Please contact the organizers in case you have any question.
 
+**Lunch will be provided during the two days of the workshop**.
+
 Use the following button to register:
 
 
@@ -100,8 +102,7 @@ Use the following button to register:
 
 ### Organizers
 
-This workshop is organized by four members of the MECO Research Team of KU Leuven, 
-Belgium: 
+This workshop is organized (and its content has been created) by five members of the MECO Research Team of KU Leuven, Belgium: 
 
 [Alejandro Astudillo](https://www.mech.kuleuven.be/en/pma/research/meco/people/00124760)  
 Postdoctoral researcher
@@ -113,6 +114,9 @@ Research manager
 Doctoral researcher
 
 [Alex Gonzalez García](https://www.mech.kuleuven.be/en/pma/research/meco/people/00159546)  
+Doctoral researcher
+
+[Dries Dirckx](https://www.mech.kuleuven.be/en/pma/research/meco/people/00110021)  
 Doctoral researcher
 
 ***
