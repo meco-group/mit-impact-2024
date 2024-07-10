@@ -9,7 +9,7 @@ center: 42.3606325,-71.094643
 zoom: 15
 
 markers:
-  - title: MIT Building 24
+  - title: MIT Building 24, Room 24-115
     text: Location of the workshop
     latlng: 42.3606325,-71.094643
   - title: MECO Research Team, KU Leuven
