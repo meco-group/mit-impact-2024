@@ -1,17 +1,17 @@
 content:
   title: Venue
   description: Map of workshop venue
-  text: TBD in Cambridge, MA.
+  text: MIT Building 24, Room 24-115, Cambridge, MA.
   # text: The AI for Robotics Workshop will be hosted at the beautiful new MindLabs building in Tilburg, The Netherlands, a few blocks from Tilburg Central Station. The venue is easily accessible by train from all Netherlands, Belgium, and Germany. The nearby airports of Eindhoven (base of Ryanair and low-cost airlines) and Amsterdam Schiphol and well connected to Tilburg by train. Most of the activities will take place in the large atrium, immediately past the entrance of the building.
 
 
-center: 42.361760095755464, -71.09029217993941
-zoom: 13
+center: 42.3606325,-71.094643
+zoom: 14
 
 markers:
-  - title: CSAIL, MIT
+  - title: MIT Building 24
     text: Location of the workshop
-    latlng: 42.361760095755464, -71.09029217993941
+    latlng: 42.3606325,-71.094643
   - title: MECO Research Team, KU Leuven
     text: Location of the MECO Research Team
     latlng: 50.86126930112855, 4.6807057265316665
