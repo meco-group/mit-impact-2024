@@ -147,9 +147,10 @@ class OptimalTrajectory:
 
         # for plotting purposes, make sure to define any obstacle you include
         # in these class attributes
-        self.obstacle_centers = [[0.0, 1.0]]    # list of (x, y, z)
-        self.obstacle_radii = [2.0]             # list of radii
-
+        self.obstacle_centers = [[2.5, 4, -1],  # list of (x, y, z)
+                                 [3, 6, -2.5],
+                                 [1.5, 2, 0]]
+        self.obstacle_radii = [1.0, 1.5, 1.0]   # list of radii
         
         
         # Define your OCP here
