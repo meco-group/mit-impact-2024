@@ -3,7 +3,7 @@ place: MIT CSAIL, Cambridge, MA
 buttons:
   - text: Workshop's GitHub
     url: https://github.com/meco-group/mit-impact-2024/
-    disabled: true
+    disabled: false
   - text: CasADi
     url: https://github.com/casadi/casadi
     disabled: false
