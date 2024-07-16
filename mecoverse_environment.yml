@@ -1,0 +1,14 @@
+name: mecoverse
+channels:
+  - conda-forge
+dependencies:
+  - python==3.10
+  - numpy
+  - scipy
+  - pip
+  - pip:
+    - matplotlib==3.7.3
+    - ipython
+    - jupyter
+    - multipledispatch
+    - git+https://gitlab.kuleuven.be/meco-software/impact.git@ros_generator

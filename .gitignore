@@ -1,1 +1,6 @@
 _site/
+__pycache__/
+foobar/
+*.pyc
+*_build_dir/
+ROS2_package/
