@@ -1,7 +1,5 @@
 import swift
 import roboticstoolbox as rtb
-import spatialmath as sm
-import numpy as np
 
 from controller import IMPACT_Controller
 
@@ -20,9 +18,6 @@ env.launch(realtime=True)
 panda = rtb.models.Panda()
 panda.q = panda.qr
 
-Tep = panda.fkine(panda.q) * sm.SE3.Trans(0.2, 0.2, 0.45)
-
-# desired_point = Tep.t
 desired_point = [0.7, -0.2, 0.4]
 
 
@@ -39,8 +34,7 @@ dt = 0.05
 
 i = 0
 
-# while not arrived:
-while i <= 1000:
+while i <= 500:
 
     current_state = panda.q.tolist() + panda.qd.tolist()
 
@@ -48,7 +42,18 @@ while i <= 1000:
 
     panda.qd = dq_input.full().flatten()
     env.step(dt)
+
+    print(f'## Iteration {i}')
+    if i == 75:
+        desired_point = [0.2, 0.2, 0.4]
+    elif i == 150:
+        desired_point = [0.7, -0.2, 0.4]
+    elif i == 225:
+        desired_point = [0.2, -0.2, 0.4]
+    elif i == 300:
+        desired_point = [0.5, -0.2, 0.6]
+
     i += 1
 
 # Uncomment to stop the browser tab from closing
-# env.hold()
+env.hold()
