@@ -101,9 +101,9 @@ class IMPACT_Controller:
             }
             mpc.solver('ipopt', options)
         elif self._solver == 'fatropy':
-            mpc.method(external_method('fatrop',N=self.N_hor,mode='fatropy',fatrop_options={"tol":1e-3}))
+            mpc.method(external_method('fatrop',N=self.HORIZON,mode='fatropy',fatrop_options={"tol":1e-3}))
         elif self._solver == 'fatrop':
-            mpc.method(external_method('fatrop',N=self.N_hor,mode='interface',fatrop_options={"tol":1e-3}))
+            mpc.method(external_method('fatrop',N=self.HORIZON,mode='interface',fatrop_options={"tol":1e-3}))
 
         
         self.mpc = mpc
