@@ -27,8 +27,6 @@ class PathPlannerLane:
 
 
         dt = mpc.T/self.N_hor
-        acc_max = 0.40/(5*dt)
-        delta_dot_max = (pi/2)/(15*dt)
 
         self.model = mpc.add_model('truck_trailer','truck_trailer.yaml')
 
