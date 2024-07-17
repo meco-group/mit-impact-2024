@@ -1,14 +1,11 @@
 import casadi as cs
-from impact import MPC, MultipleShooting, external_method
-from rockit import FreeTime
+from impact import MPC, MultipleShooting, external_method, FreeTime
 from casadi import cos, sin, pi
 
 
 class PathPlannerLane:
     def __init__(self):
 
-        self._solver = 'ipopt'  # choose between 'ipopt', 'fatropy' and 'fatrop'
-        # self.dt = 0.050
         self.N_hor = 50
         self.M = 1
 
@@ -23,15 +20,11 @@ class PathPlannerLane:
     def _set_path_planner(self):
 
         mpc = MPC(T=FreeTime(12.0))
-        # mpc = MPC(T=FreeTime(self.dt*self.N_hor))
 
-
-        dt = mpc.T/self.N_hor
-        acc_max = 0.40/(5*dt)
-        delta_dot_max = (pi/2)/(15*dt)
-
+        # Define the model
         self.model = mpc.add_model('truck_trailer','truck_trailer.yaml')
 
+        # Set parameters
         x_current = mpc.parameter('x_current', self.model.nx)
         x_final = mpc.parameter('x_final', self.model.nx)
 
@@ -39,11 +32,14 @@ class PathPlannerLane:
         lane_min_x = lane_params[0]
         lane_max_x = lane_params[1]
 
+        # Compute expression for the position of the truck
         x0 = self.model.x1 + self.model.L1*cos(self.model.theta1) + self.model.M0*cos(self.model.theta0)
         y0 = self.model.y1 + self.model.L1*sin(self.model.theta1) + self.model.M0*sin(self.model.theta0)
 
+        # Compute expression for the angle between the truck and the trailer
         beta01 = self.model.theta0 - self.model.theta1
 
+        # Compute expression for the difference between the current and the next input
         delta_u = mpc.next(self.model.u) - self.model.u
 
         # Initial constraints
@@ -62,7 +58,6 @@ class PathPlannerLane:
         mpc.subject_to(mpc.at_tf(cs.sumsqr(cs.vertcat(self.model.theta0,self.model.theta1) - x_final[2:4])) <= (pi/4)**2) #errror in a ball of 30 degrees
 
         mpc.subject_to(mpc.at_tf(self.model.V0)==0)
-
         mpc.subject_to(mpc.at_tf(beta01) == 0)
         
         # Set initial guess
@@ -78,33 +73,30 @@ class PathPlannerLane:
 
         # Minimal time
         mpc.add_objective(mpc.at_tf(mpc.T))
+
+        # Add regularization terms
         mpc.add_objective(mpc.sum(1e-1*beta01**2))
         mpc.add_objective(mpc.sum((1e-2)*cs.sumsqr(self.model.u)))
         mpc.add_objective(1e-1*mpc.sum(cs.sumsqr(delta_u)))
 
 
         # Choose a discretization method and solver
-        if self._solver == 'ipopt':
-            mpc.method(MultipleShooting(N=self.N_hor, M=self.M, intg='rk'))
-            options = {
-                "expand": True,
-                "verbose": False,
-                "print_time": False,
-                "error_on_fail": True,
-                "ipopt": {
-                    # "linear_solver": "ma27",
-                    "print_level": 0,
-                    # "print_timing_statistics": "yes",
-                    "tol": 1e-3,
-                    "sb": "yes"
-                }
+        mpc.method(MultipleShooting(N=self.N_hor, M=self.M, intg='rk'))
+        options = {
+            "expand": True,
+            "verbose": False,
+            "print_time": False,
+            "error_on_fail": True,
+            "ipopt": {
+                # "linear_solver": "ma27",
+                "print_level": 0,
+                # "print_timing_statistics": "yes",
+                "tol": 1e-3,
+                "sb": "yes"
             }
-            mpc.solver('ipopt', options)
-        elif self._solver == 'fatropy':
-            mpc.method(external_method('fatrop',N=self.N_hor,mode='fatropy',fatrop_options={"tol":1e-3}))
-        elif self._solver == 'fatrop':
-            mpc.method(external_method('fatrop',N=self.N_hor,mode='interface',fatrop_options={"tol":1e-3}))
-
+        }
+        mpc.solver('ipopt', options)
+       
         self.mpc = mpc
 
         self.x_current = x_current
