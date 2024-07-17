@@ -6,6 +6,7 @@ dependencies:
   - numpy
   - scipy
   - pinocchio
+  - roboticstoolbox-python
   - pip
   - pip:
     - matplotlib==3.7.3
@@ -13,6 +14,5 @@ dependencies:
     - jupyter
     - multipledispatch
     - git+https://gitlab.kuleuven.be/meco-software/impact.git@ros_generator
-    - roboticstoolbox-python
     - git+https://gitlab.kuleuven.be/meco-software/robot-models-meco.git@pin3-devel
 
