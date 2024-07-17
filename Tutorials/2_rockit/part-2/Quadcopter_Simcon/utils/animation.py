@@ -60,10 +60,10 @@ def sameAxisAnimation(simulation_results, waypoints, Ts, params, xyzType, yawTyp
     y_wp = np.array([yDes[0], yDes[-1]])
     z_wp = np.array([zDes[0], zDes[-1]])
 
-    if (config.orient == "NED"):
-        z = -z
-        zDes = -zDes
-        z_wp = -z_wp
+    # if (config.orient == "NED"):
+    #     z = -z
+    #     zDes = -zDes
+    #     z_wp = -z_wp
 
     # Make the plot
     # --------------------
@@ -181,10 +181,10 @@ def sameAxisAnimation(simulation_results, waypoints, Ts, params, xyzType, yawTyp
         
         quat = quat_all[i*numFrames]
     
-        if (config.orient == "NED"):
-            z = -z
-            z_from0 = -z_from0
-            quat = np.array([quat[0], -quat[1], -quat[2], quat[3]])
+        # if (config.orient == "NED"):
+        #     z = -z
+        #     z_from0 = -z_from0
+        #     quat = np.array([quat[0], -quat[1], -quat[2], quat[3]])
     
         R = utils.quat2Dcm(quat)    
         motorPoints = np.array([[dxm, -dym, dzm], [0, 0, 0], [dxm, dym, dzm], [-dxm, dym, dzm], [0, 0, 0], [-dxm, -dym, dzm]])
