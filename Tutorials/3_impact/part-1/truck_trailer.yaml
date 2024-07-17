@@ -1,0 +1,23 @@
+equations:
+  inline:
+    ode:
+      x1: (V0*cos(theta0-theta1) + M0*sin(theta0-theta1)*(V0/L0*tan(delta0)))*cos(theta1)
+      y1: (V0*cos(theta0-theta1) + M0*sin(theta0-theta1)*(V0/L0*tan(delta0)))*sin(theta1)
+      theta0: V0/L0*tan(delta0)
+      theta1: V0/L1*sin(theta0-theta1) - M0/L1*cos(theta0-theta1)*(V0/L0*tan(delta0))
+differential_states: 
+  - name: x1
+  - name: y1
+  - name: theta0
+  - name: theta1
+controls: 
+  - name: delta0
+  - name: V0
+constants:
+  inline:
+    L0: 0.421
+    M0: -0.045 
+    W0: 0.25
+    L1: 0.540 
+    M1: 0.00 
+    W1: 0.25
