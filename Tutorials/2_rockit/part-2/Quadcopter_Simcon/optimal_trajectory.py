@@ -134,14 +134,29 @@ class OptimalTrajectory:
         # for more information, see: https://www.sciencedirect.com/science/article/pii/S2405896323011540?via%3Dihub
         # "Optimal and Reactive Control for Agile Drone flight in Cluttered Environments"
         # by Dries Dirckx, Mathias Bos, Wilm Decré, and Jan Swevers
-       
-        # Construct dynamics vector
-        # 
-        # Hint: make use of the methods evaluateR and evaluateSinv
-        #
-        #        
         
-        return None
+        # for readability, extract symbols from state vector
+        p = current_state[0:3]
+        v = current_state[3:6]
+        eul = current_state[6:9]
+        phi = eul[0]
+        theta = eul[1]
+        psi = eul[2]
+
+        # get R and Sinv
+        R = self.evaluateR(phi, theta, psi)
+        Sinv = self.evaluateSinv(phi, theta)
+
+        # construct acceleration vectors
+        a = R @ vertcat(0, 0, current_controls[3]) - \
+            vertcat(0, 0, self.quad.params["g"])
+
+        # stack everything together
+        dynamics = vertcat(v,
+                           a,
+                           Sinv @ current_controls[0:3])
+        
+        return dynamics
     
     def optimize(self):
 
@@ -154,9 +169,69 @@ class OptimalTrajectory:
         
         
         # Define your OCP here
-        # TODO
-        #
-        sol = None
+        ocp = Ocp(T=4)
+
+        # Define states
+        p = ocp.state(3)
+        v = ocp.state(3)
+        eul = ocp.state(3)
+        x = vcat([p, v, eul])
+        phi = x[6]
+        theta = x[7]
+        psi = x[8]
+
+        # Define controls
+        u = ocp.control(4) #(roll rate, pitch rate, yaw rate, thrust)
+
+        # Set dynamics
+        ocp.set_der(x, self.evaluateQuadcopterDynamics(x, u))
+
+        # Set initial condition
+        ocp.subject_to(ocp.at_t0(x) == 0)
+
+        # Set final condition
+        pf = [5.0, 8.0, -2.0]
+        ocp.subject_to(ocp.at_tf(x[:3]) == pf)
+        ocp.subject_to(ocp.at_tf(x[3:]) == 0)
+
+        # Set thrust bounds
+        u_min = 0
+        u_max = 15
+        ocp.subject_to(u_min <= (u[3] <= u_max))
+
+        # Set rolling velocity limits
+        max_roll_rate = 1.0
+        ocp.subject_to(-max_roll_rate <= (u[0] <= max_roll_rate))
+        ocp.subject_to(-max_roll_rate <= (u[1] <= max_roll_rate))
+        ocp.subject_to(-max_roll_rate <= (u[2] <= max_roll_rate))
+
+        # Set tilt limits
+        max_tilt = np.pi/2
+        ocp.subject_to(-max_tilt <= (phi <= max_tilt))
+        ocp.subject_to(-max_tilt <= (theta <= max_tilt))
+        ocp.subject_to(-max_tilt <= (psi <= max_tilt))
+
+        # Set obstacle avoidance constraints
+        for i in range(len(self.obstacle_centers)):
+            p_obs = self.obstacle_centers[i]
+            R_obs = self.obstacle_radii[i]
+            ocp.subject_to((p[0]-p_obs[0])**2 + (p[1]-p_obs[1])**2 + 
+                        (p[2]-p_obs[2])**2 >= R_obs**2)
+
+        # Set objective
+        ocp.add_objective(ocp.integral(u.T @ u))
+
+        # Set transcription and solver options
+        N = 20; M = 5
+        ocp.method(MultipleShooting(N=N, M=M, intg='rk'))
+        ocp.solver('ipopt')
+
+        # Add inintial guess
+        ocp.set_initial(u, vertcat(0, 0, 0, self.quad.params["g"]))
+        ocp.set_initial(p, np.linspace(np.array([0, 0, 0]), np.array(pf), N+1).T)
+
+        # solve
+        sol = ocp.solve()
 
 
         # Store the trajectory
