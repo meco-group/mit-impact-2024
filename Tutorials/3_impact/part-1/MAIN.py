@@ -27,7 +27,7 @@ FINAL_PARKING_STATE = [3.5, 1.0, pi, pi]
 LIST_OF_ACTIONS = [
     {'type': 'lane', 'current_state': [1.76, -0.09, 1.32, 0.94], 'desired_state': [2.13, 1.75, pi/2, pi/2], 'lane_params': west_lane_params},
     {'type': 'parking', 'current_state': [2.2, 0.6, 1.543, 1.543], 'desired_state': FINAL_PARKING_STATE, 'parking_params':PARKING_PARAMS},
-    # {'type': 'roundabout', 'current_state': [2.1955, 0.85, 1.5957, 1.5957], 'desired_state': [0.75, 2.0, 3*pi/2, 3*pi/2], 'roundabout_params': north_roundabout_params},
+    {'type': 'roundabout', 'current_state': [2.1955, 0.85, 1.5957, 1.5957], 'desired_state': [0.75, 2.0, 3*pi/2, 3*pi/2], 'roundabout_params': north_roundabout_params},
     # {'type': 'roundabout_south', 'current_state': [0.6986148, 1.705157, -1.57043, -1.5735031], 'desired_state': [2.2, 0.6, pi/2, pi/2], 'roundabout_params': south_roundabout_params},
     # {'type': 'parking', 'current_state': [2.2, 0.6, 1.543, 1.543], 'desired_state': FINAL_PARKING_STATE, 'parking_params':PARKING_PARAMS},
 ]
