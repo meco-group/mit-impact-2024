@@ -62,7 +62,7 @@ This workshop has received funding from the *MIT-Belgium - KU Leuven Seed Fund* 
     </div>
     <div class="col-sm">
         <figure>
-            <img src="assets/images/KULeuven_logo.png" height="75px" alt="" />
+            <img src="assets/images/fmkuleuven.png" height="75px" alt="" />
         </figure>
     </div>
     <div class="col-sm">
