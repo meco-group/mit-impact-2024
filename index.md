@@ -51,7 +51,7 @@ The following videos show previous works developed by the MECO Research Team usi
 {% include youtubePlayer.html id=page.bin_picking_video_id %}
 
 
-This workshop has received funding from the *MIT-Belgium - KU Leuven Seed Fund* within the framework of the *MIT International Science and Technology Initiatives (MISTI)* grant programme.
+This workshop has received funding from the *MIT-Belgium - KU Leuven Seed Fund* within the framework of the *MIT International Science and Technology Initiatives (MISTI)* grant programme. The MECO Research Team is part of Flanders Make, the strategic research centre for the manufacturing industry.
 
 <div class="container">
   <div class="row">
@@ -62,12 +62,12 @@ This workshop has received funding from the *MIT-Belgium - KU Leuven Seed Fund* 
     </div>
     <div class="col-sm">
         <figure>
-            <img src="assets/images/fmkuleuven.png" height="75px" alt="" />
+            <img src="assets/images/MIT_logo.png" height="75px" alt="" />
         </figure>
     </div>
     <div class="col-sm">
         <figure>
-            <img src="assets/images/MIT_logo.png" height="75px" alt="" />
+            <img src="assets/images/fmkuleuven.png" height="75px" alt="" />
         </figure>
     </div>
   </div>
@@ -87,7 +87,7 @@ Due to capacity constraints at the venue of the workshop, we kindly ask all part
 Use the following button to register:
 
 
-<a href="https://forms.office.com/e/uEVeKAjS2k" type="button" class="btn btn-primary d-lg-inline-block my-lg-0" target="_blank">Click here to register for the workshop</a>
+<a href="https://forms.office.com/e/uEVeKAjS2k" type="button" class="btn btn-primary d-lg-inline-block my-lg-0" target="_blank " disabled>Click here to register for the workshop</a>
 
 **Your registration will be completed only after you receive a confirmation email from the organizers.**
 
