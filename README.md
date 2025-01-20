@@ -54,7 +54,25 @@ Activate the conda environment by running in a terminal
 conda activate mecoverse
 ```
 
+## Development environment using robot simulator
 
+For the second part of the Impact tutorial you will need to install additional libraries in your environment. Since some of these libraries downgrade the version of CasADi, we recommend you to create a separate Conda environment for this.  To create a Conda environment that includes Pinocchio, the Robotics Toolbos for Python and the RobotsMECO library (to generate symbolic robot models compatible with CasADi using Pinocchio), just execute the following command:
+
+```sh
+conda env create -f mecoverse_robotics_environment.yml
+```
+
+
+This will create a conda environment called `mecoverse-robotics`.
+
+### Start using the created Conda environment
+
+Activate the conda environment by running in a terminal
+```sh
+conda activate mecoverse-robotics
+```
+
+You can follow the instructions provided in the [instructions](./Tutorials/3_impact/part-2/instructions.pdf) file for the Impact tutorial - Part 2.
 
 ***
 

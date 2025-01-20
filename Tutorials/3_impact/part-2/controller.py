@@ -6,35 +6,34 @@ from impact import MPC, MultipleShooting, external_method
 
 class IMPACT_Controller:
     def __init__(self, model_file):
-        self._solver = 'ipopt'
+        self._solver = 'ipopt' # 'ipopt', 'fatrop', 'fatropy'
 
         self.model_file = model_file
 
 
         self.integrator = 'rk' # 'expl_euler', 'rk'
-        self.HORIZON = 20 
-        self.TIME_HORIZON = 1.0 
+        self.HORIZON = 20 # 12, 20
+        self.TIME_HORIZON = 1.0 # 0.6, 1.
         self.DT = self.TIME_HORIZON/self.HORIZON
        
         self._set_mpc()            
-        self._set_MPC_function()         
+        self._set_MPC_function()  
+        self._export_artifacts()         
 
     def _set_mpc(self):
 
         mpc = MPC(T=self.TIME_HORIZON)
 
-        self.model = ...
+        self.model = mpc.add_model('franka_panda', self.model_file)
 
-        # Set parameters
-        ...
-        ...
+        x_current = mpc.parameter('x_current', self.model.nx)
+        p_final = mpc.parameter('p_final', 3, 1)
 
-        # Initialize parameters
-        ...
-        ...
+        mpc.set_value(x_current, [0]*self.model.nx)
+        mpc.set_value(p_final, cs.DM.zeros(3, 1))
 
         # Initial constraints
-        ...
+        mpc.subject_to(mpc.at_t0(self.model.x)==x_current)
 
         # Path constraints
         self.model.q = cs.vertcat(
@@ -56,13 +55,12 @@ class IMPACT_Controller:
             self.model.dq7
         )
 
-        # Define path constraints (upper and lower bounds on joint position, velocity and acceleration)
-        ...
-        ...
-        ...
+        mpc.subject_to(self.model.joint_pos_lb <= (self.model.q <= self.model.joint_pos_ub))
+        mpc.subject_to(self.model.joint_vel_lb <= (self.model.dq <= self.model.joint_vel_ub))
+        mpc.subject_to([-100]*self.model.nu <= (self.model.u <= [100]*self.model.nu))
 
         # Terminal constraints
-        ...
+        mpc.subject_to(mpc.at_tf(self.model.dq) == 0)
 
         # Objective function
         fk = self.model.fk
@@ -70,16 +68,12 @@ class IMPACT_Controller:
         weight_path = 1.0
         weight_terminal = 50.0
 
-        # Add objective for P2P motion
-        mpc.add_objective(...)
-
-        # Regularize joint position, joint velocity and joint acceleration in the objective function
+        mpc.add_objective(weight_path*mpc.sum(cs.sumsqr(fk(self.model.q)[-1][0:3, 3] - p_final)))
         mpc.add_objective(1e-5*mpc.sum(cs.sumsqr(self.model.q)))
         mpc.add_objective(1e-3*mpc.sum(cs.sumsqr(self.model.dq)))
         mpc.add_objective(1e-3*mpc.sum(cs.sumsqr(self.model.u)))
 
-        # Add terminal objective for P2P motion
-        mpc.add_objective(...)
+        mpc.add_objective(weight_terminal*mpc.at_tf(cs.sumsqr(fk(self.model.q)[-1][0:3, 3] - p_final)))
         
 
         # Choose a discretization method and solver
@@ -105,12 +99,12 @@ class IMPACT_Controller:
         elif self._solver == 'fatrop':
             mpc.method(external_method('fatrop',N=self.HORIZON,mode='interface',fatrop_options={"tol":1e-3}))
 
+
         
         self.mpc = mpc
 
-        # Set the parameters as variables of the controller class
-        self.... = ...
-        self.... = ...
+        self.x_current = x_current
+        self.p_final = p_final
 
 
     def _set_MPC_function(self):
@@ -118,34 +112,36 @@ class IMPACT_Controller:
 
         dq, u = self.model.dq, self.model.u
 
-        # Get value of parameters
-        ...
-        ...
+        dq_samp = mpc.sample(dq, grid='control-')[1]
 
-        # Get sample of initial guesses
-        ...
-        ...
+        x_current_samp = mpc.value(self.x_current)
+        p_final_samp = mpc.value(self.p_final)
 
-        input_vector = [...]
-        input_names = [...]
+        u_initial_guess = mpc.sample(self.model.u, grid='control-')[1]
+        x_initial_guess = mpc.sample(self.model.x, grid='control')[1]
 
-        # Sample desired outputs
-        ...
-        ...
-        ...
+        input_vector = [x_current_samp, p_final_samp, x_initial_guess, u_initial_guess]
+        input_names = ['vehicle_state', 'p_final', 'x_initial_guess', 'u_initial_guess']
 
-        output_vector = [...]
-        output_names = [...]
+        time_grid_intg, X_res = mpc.sample(self.model.x, grid='control')
+        time_grid_intg, U_res = mpc.sample(self.model.u, grid='control-')
+
+        output_vector = [dq_samp[:,1], X_res, U_res]
+        output_names = ['velocity', 'X_res', 'U_res']
 
         self.MPC_function = mpc.to_function('mpc_fun', input_vector, output_vector, input_names, output_names)
+
+        # self.MPC_function.save('P2P_motion.casadi')
+
+    def _export_artifacts(self):
+        pass
+        # self.mpc.export('p2p_motion', mode='debug', ros2=True, compile=True)
 
 
     def optimize(self, current_state, desired_position, x_initial_guess, u_initial_guess):
 
-        # Evaluate MPC function
+        dq_res, X_res, U_res = self.MPC_function(current_state, desired_position, x_initial_guess, u_initial_guess)
 
-        ... = self.MPC_function(...)
-
-        return ...
+        return dq_res, X_res, U_res
 
     
